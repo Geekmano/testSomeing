@@ -76,9 +76,7 @@ public class VzdbTestApplicationBlobTest {
 	}
 
 	/**
-	 * @param list
 	 * @param tagUpdateFloat
-	 * @throws ArrayComparisonFailure
 	 */
 	private void removeBlobTag( String tagUpdateFloat)  {
 		ByteListHolder list = new ByteListHolder();
