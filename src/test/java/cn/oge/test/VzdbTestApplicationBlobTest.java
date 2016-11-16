@@ -61,6 +61,7 @@ public class VzdbTestApplicationBlobTest {
 		writeAndReadBolbRealDatas();
 		writeAndReadBlobInfo();
 		writeAndReadBlobData();
+		
 	}
 	/**
 	 * @param floatParas
