@@ -108,11 +108,7 @@ public class VzdbTestApplicationFloatTest {
 		ByteListHolder list = new ByteListHolder();
 		String[] tagFloat = config.getFloatTags().split(",");
 		
-		FloatPara[] paras = new FloatPara[500000];
-		for (int i = 0; i < paras.length; i++) {
-			FloatPara floatPara = paras[i];
-			
-		}
+		FloatPara[] paras = new FloatPara[3];
 		Assert.assertEquals("添加源编码返回值不为1", 1, rdb.appendFloatParas(generateParams(tagFloat, paras), list));
 		Assert.assertArrayEquals("添加源编码失败", bs, list.value);
 	}

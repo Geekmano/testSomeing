@@ -83,7 +83,7 @@ public class VzdbTestApplicationBlobTest {
 
 		// 查询删除后得源编码
 
-		byte[] bs = { 1, 1, 1 ,1,1,1};
+		byte[] bs = { 1, 1, 1 };
 		Assert.assertArrayEquals("删除结果不一样", bs, list.value);
 	}
 
