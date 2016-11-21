@@ -50,16 +50,11 @@ public class VzdbTestApplicationFloatTest {
 		}
 	}
 
-	@Test
-	public void testIntegration(){
-		testFloatTag();
-		writeAndReadFloatRealDatasByTags();
-		writeAndReadFloatHisDatasByTags();
-	}
 	/**
 	 * 添加点值标签名
 	 * 
 	 */
+	@Test
 	public void testFloatTag() {
 		// 添加源编码
 		 addFloatTag();
@@ -139,6 +134,7 @@ public class VzdbTestApplicationFloatTest {
 	 * @param hdb
 	 * @return
 	 */
+	@Test
 	public void writeAndReadFloatRealDatasByTags() {
 		writeFloatData();
 		readFloatData();
@@ -175,6 +171,7 @@ public class VzdbTestApplicationFloatTest {
 	/**
 	 * 
 	 */
+	@Test
 	public void writeAndReadFloatHisDatasByTags() {
 		addFloatTag();
 		readHisFloatData();

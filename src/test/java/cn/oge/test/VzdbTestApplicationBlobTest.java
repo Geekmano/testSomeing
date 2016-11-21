@@ -3,6 +3,7 @@ package cn.oge.test;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,12 +32,14 @@ import vzdb.RecordInfoListHolder;
 public class VzdbTestApplicationBlobTest {
 	private static Hdb rdb;
 	
+	private int count =0;
 	private byte[] bs = { 1, 1, 1 };
 	@Autowired
 	private ConfigBeans config;
 	
 	@Before
 	public  void getConnection() {
+		count=count+1;
 		rdb = new Hdb();
 		log.info("config: {}",config);
 		int i = rdb.connect(config.getRtdb().getHost(),config.getRtdb().getPort()
@@ -54,14 +57,6 @@ public class VzdbTestApplicationBlobTest {
 		}
 	}
 
-	@Test
-	public void testIntegration(){
-//		testBlobTag();
-		writeAndReadBolbRealDatas();
-		writeAndReadBlobInfo();
-		writeAndReadBlobData();
-		
-	}
 	/**
 	 * @param floatParas
 	 * @return
@@ -105,6 +100,8 @@ public class VzdbTestApplicationBlobTest {
 	 * @param hdb
 	 * @return
 	 */
+	@Ignore
+	@Test
 	public void testBlobTag() {
 				// 添加源编码
 				addBlobTag();
@@ -148,6 +145,7 @@ public class VzdbTestApplicationBlobTest {
 	 * @param hdb
 	 * @return
 	 */
+	@Test
 	public void writeAndReadBolbRealDatas() {
 		writeBlobData();
 		readRealBlobData();
@@ -180,12 +178,14 @@ public class VzdbTestApplicationBlobTest {
 		Assert.assertEquals(1,rdb.writeBlobDatasByTags(paras));
 		return paras;
 	}
+	@Test
 	public void writeAndReadBlobInfo() {
 		writeBlobData();
 		readBlobDataTime();
 		removeBlobDatasByTags();
 		removeBlobTag(config.getBlobTags());
 	}
+	@Test
 	public void writeAndReadBlobData() {
 		writeBlobData();
 		readBlobRTDataHistory();
