@@ -100,7 +100,6 @@ public class VzdbTestApplicationBlobTest {
 	 * @param hdb
 	 * @return
 	 */
-	@Ignore
 	@Test
 	public void testBlobTag() {
 				// 添加源编码
