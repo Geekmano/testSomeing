@@ -101,9 +101,10 @@ public class VzdbTestApplicationBlobTest {
 	 * @return
 	 */
 	@Test
+	@Ignore
 	public void testBlobTag() {
 				// 添加源编码
-//				addBlobTag();
+				addBlobTag();
 
 				 // 查询源编码
 				BlobPara[] floatParas = assertBlobResult(config.getBlobTags());
